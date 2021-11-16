@@ -1,8 +1,10 @@
+# Container
+  * debian:11.1
+
 # XMRIG code
-   * https://github.com/xmrig/xmrig
+  * https://github.com/xmrig/xmrig
 
-
-#install monero wallet
+# install monero wallet
   * https://www.getmonero.org/downloads/
   * https://www.youtube.com/watch?v=hHtGN_JzoP8&t=1015s
 
