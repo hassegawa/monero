@@ -3,6 +3,7 @@
 
 # XMRIG code
   * https://github.com/xmrig/xmrig
+  * https://xmrig.com/docs/miner/command-line-options
 
 # install monero wallet
   * https://www.getmonero.org/downloads/

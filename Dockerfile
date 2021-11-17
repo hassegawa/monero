@@ -18,6 +18,8 @@ RUN git clone https://github.com/xmrig/xmrig.git &&  \
 FROM debian:11.1
 LABEL name "Hassegawa"
 
+EXPOSE 8080
+
 WORKDIR /monero
 
 ENV TERM linux
@@ -30,5 +32,6 @@ COPY --from=build /monero/xmrig/build .
 ENV POOL_URL=""
 ENV WALLET=""
 ENV WORKER_NAME=""
+ENV TOKEN="zZ2DoF1LgtRXsEjnwCBJNmYdALpS08suAy8w9gboi0A49BqiZ"
 
-ENTRYPOINT ./xmrig -o ${POOL_URL} -u ${WALLET} -p ${WORKER_NAME}
+ENTRYPOINT ./xmrig --api-worker-id ${WORKER_NAME} --http-port 8080 --http-access-token ${TOKEN} -o ${POOL_URL} -u ${WALLET}
