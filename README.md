@@ -29,7 +29,8 @@
        * get script [here](https://raw.githubusercontent.com/hassegawa/monero/main/update_and_start.sh)
        
   *  run script:
-       * -i to number of instance
-       * -w to wallet
+       * -i to number of instance; deafult 1
+       * -w to wallet 
+       * -p pool url; ex: gulf.moneroocean.stream:10128
 
             * start.sh -i 2 -w your-public-wallet-key
