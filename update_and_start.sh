@@ -3,6 +3,9 @@
 #instance default is 1
 instance=1;
 
+#wallet=default_wallet
+#pool=default_pool_url:port
+
 while getopts i:w:p: flag
 do
     case "${flag}" in
