@@ -25,5 +25,5 @@ docker pull hassegawa/monero
 #run new container
 for (( c=1; c<=$instance; c++ ))
 do  
-  docker run -d --name monero_$c --env POOL_URL=gulf.moneroocean.stream:10128 --env WALLET=[WALLET] --env WORKER_NAME=pc_$instance  hassegawa/monero
+  docker run -d --name monero_$c --env POOL_URL=gulf.moneroocean.stream:10128 --env WALLET=$wallet --env WORKER_NAME=pc_$instance  hassegawa/monero
 done
