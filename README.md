@@ -33,4 +33,4 @@
        * -w to wallet 
        * -p pool url; ex: gulf.moneroocean.stream:10128
 
-            * start.sh -i 2 -w your-public-wallet-key
+            * start.sh -i 2 -w your-public-wallet-key -p pool-url:port
