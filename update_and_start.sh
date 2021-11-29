@@ -8,7 +8,7 @@ do
     case "${flag}" in
         i) instance=${OPTARG};;
         w) wallet=${OPTARG};;
-        p) pull=${OPTARG};;
+        p) pool=${OPTARG};;
     esac
 done
 
@@ -17,7 +17,7 @@ if [ -z "$wallet" ]; then
   exit 1;
 fi
 
-if [ -z "$pull" ]; then 
+if [ -z "$pool" ]; then 
   echo "Need to enter the parameter '-p pool-url:port' ex: gulf.moneroocean.stream:10128";
   exit 1;
 fi
@@ -31,5 +31,5 @@ docker pull hassegawa/monero
 #run new container
 for (( c=1; c<=$instance; c++ ))
 do  
-  docker run -d --name monero_$c --env POOL_URL=$pull --env WALLET=$wallet --env WORKER_NAME=miner_$instance  hassegawa/monero
+  docker run -d --name monero_$c --env POOL_URL=$pool --env WALLET=$wallet --env WORKER_NAME=miner_$instance  hassegawa/monero
 done
