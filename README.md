@@ -21,3 +21,15 @@
 
 # Github project
   * https://github.com/hassegawa/monero
+
+
+# Scritp to start or update container
+  * create a file: start.sh
+
+       * get script [here](https://raw.githubusercontent.com/hassegawa/monero/main/update_and_start.sh)
+       
+  *  run script:
+       * -i to number of instance
+       * -w to wallet
+
+            * start.sh -i 2 -w your-public-wallet-key
