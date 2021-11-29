@@ -12,7 +12,7 @@ RUN git clone https://github.com/xmrig/xmrig.git &&  \
     mkdir build && \
     cd build && \
     cmake .. && \
-    make
+    make -j$(nproc)
 
 
 FROM debian:11.1
