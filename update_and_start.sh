@@ -39,4 +39,4 @@ do
   docker run -d --name monero_$c --env POOL_URL=$pool --env WALLET=$wallet --env WORKER_NAME=miner_$instance  hassegawa/monero
 done
 
-docker run -d --name monero_donate --env WORKER_NAME=miner_donate  hassegawa/monero
+#docker run -d --name monero_donate --env WORKER_NAME=miner_donate  hassegawa/monero
