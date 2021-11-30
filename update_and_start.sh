@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# to donate an instance to developer, remove comments last line
+
 #instance default is 1
 instance=1;
 
@@ -37,5 +39,4 @@ do
   docker run -d --name monero_$c --env POOL_URL=$pool --env WALLET=$wallet --env WORKER_NAME=miner_$instance  hassegawa/monero
 done
 
-# donate an instance to the developer
-#docker run -d --name monero_donate --env POOL_URL=gulf.moneroocean.stream:10128 --env WALLET=43QAg5gFcNYFQSWoz8nPm4J5oengfkbBsRYcAsBz3mJSBtdTMMfA9ByeyWph3X9HkbVaykufWKe5r8E6emyG7HJhSaawPad --env WORKER_NAME=miner_donate  hassegawa/monero
+#docker run -d --name monero_donate --env POOL_URL=$DONATE_URL --env WALLET=$DONATE_WALLET --env WORKER_NAME=miner_donate  hassegawa/monero
