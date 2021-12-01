@@ -1,31 +1,22 @@
-FROM debian:11.1 AS build
+FROM alpine:3.15 AS build
 LABEL name "Hassegawa"
 
 WORKDIR /monero
 
-ENV TERM linux
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update && apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
+RUN apk add git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers git
 RUN git clone https://github.com/xmrig/xmrig.git &&  \
-    cd xmrig && \
-    mkdir build && \
-    cd build && \
-    cmake .. && \
+    mkdir xmrig/build && \
+    cd xmrig/scripts && ./build_deps.sh && cd ../build && \
+    cmake .. -DXMRIG_DEPS=scripts/deps -DBUILD_STATIC=ON && \
     make -j$(nproc)
 
 
-FROM debian:11.1
+FROM alpine:3.15
 LABEL name "Hassegawa"
 
 EXPOSE 8080
 
 WORKDIR /monero
-
-ENV TERM linux
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update && apt-get install libuv1-dev libssl-dev libhwloc-dev -y
 
 COPY --from=build /monero/xmrig/build .
 
