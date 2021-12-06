@@ -36,7 +36,7 @@ docker pull hassegawa/monero
 #run new container
 for (( c=1; c<=$instance; c++ ))
 do  
-  docker run -d --name monero_$c --env POOL_URL=$pool --env WALLET=$wallet --env WORKER_NAME=miner_$instance  hassegawa/monero
+  docker run -d --name monero_$c --env POOL_URL=$pool --env WALLET=$wallet --env WORKER_NAME=miner_$c  hassegawa/monero
   sleep 10
 done
 
