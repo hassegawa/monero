@@ -1,5 +1,5 @@
 # Container
-  * debian:11.1
+  * alpine 3.15
 
 # XMRIG code
   * https://github.com/xmrig/xmrig
