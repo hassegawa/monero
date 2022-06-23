@@ -34,3 +34,7 @@
        * -p pool url; ex: gulf.moneroocean.stream:10128
 
             * start.sh -i 2 -w your-public-wallet-key -p pool-url:port
+
+git tag -a v1.x.0 -m "my version 1.x.0"
+
+[![Foo](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/hassegawa)            
