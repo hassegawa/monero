@@ -3,7 +3,7 @@ LABEL name "Hassegawa"
 
 WORKDIR /monero
 
-RUN apk add git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers git
+RUN apk update && apk upgrade && apk add git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers
 RUN git clone https://github.com/xmrig/xmrig.git
 RUN mkdir -p xmrig/build
 RUN cd xmrig/scripts
