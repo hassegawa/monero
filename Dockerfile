@@ -1,4 +1,4 @@
-FROM alpine:3.15 AS build
+FROM alpine:3.18 AS build
 LABEL name "Hassegawa"
 
 WORKDIR /monero
@@ -11,7 +11,7 @@ RUN git clone https://github.com/xmrig/xmrig.git &&  \
     make -j$(nproc)
 
 
-FROM alpine:3.15
+FROM alpine:3.18
 LABEL name "Hassegawa"
 
 EXPOSE 8080
