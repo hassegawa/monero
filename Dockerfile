@@ -5,7 +5,7 @@ WORKDIR /monero
 
 RUN apk add git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers git
 RUN git clone https://github.com/xmrig/xmrig.git
-RUN mkdir xmrig/build
+RUN mkdir -p xmrig/build
 RUN cd xmrig/scripts
 RUN ./build_deps.sh
 RUN cd ../build
